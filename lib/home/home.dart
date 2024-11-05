@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'info.dart'; 
+import 'info.dart'; // Import the info screen
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -36,28 +36,41 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.only(bottom: 15),
                   child: _buildLogosRow(),
                 ),
                 _buildButton('EDPPAS', 'https://app.edppas.com/'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 _buildButton('EGOV PH',
                     'https://play.google.com/store/apps/details?id=egov.app/'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
+                _buildButton('NCRPO WEBSITE', 'https://ncrpo.pnp.gov.ph/'),
+                const SizedBox(height: 10),
                 _buildButton('PRMS', 'https://pais.pnp.gov.ph/'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 _buildButton('PES', 'https://mail.pnp.gov.ph/mail/'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 _buildButton('ONLINE PAY SLIP', 'https://payslip.pnppms.org/'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 _buildButton('POP',
                     'https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf/'),
-                const SizedBox(height: 20),
-                _buildButton('APP INFORMATION', ''), // No URL needed for navigation
               ],
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InfoScreen()),
+          );
+        },
+        backgroundColor: Color.fromARGB(255, 32, 78, 147),
+        child: const Icon(
+          Icons.help_outline,
+          color: Colors.white,
+        ),
       ),
     );
   }
@@ -66,30 +79,25 @@ class _MyHomePageState extends State<MyHomePage> {
     final isSelected = _selectedButton == text;
 
     return SizedBox(
-      width: 250,
+      width: 220, // Increased width for larger buttons
       child: ElevatedButton(
         onPressed: () {
           setState(() {
             _selectedButton = text;
           });
-          if (text == 'APP INFORMATION') {
-            // Navigate to info screen
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => InfoScreen()),
-            );
-          } else {
-            openUrl(urlString);
-          }
+          openUrl(urlString);
         },
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
           backgroundColor: isSelected
               ? const Color.fromARGB(255, 32, 78, 147)
               : const Color.fromARGB(255, 79, 125, 180),
-          padding: const EdgeInsets.symmetric(vertical: 15),
+          padding: const EdgeInsets.symmetric(vertical: 12), // Increased padding
         ),
-        child: Text(text),
+        child: Text(
+          text,
+          style: const TextStyle(fontSize: 16), // Optional: adjust text size
+        ),
       ),
     );
   }
