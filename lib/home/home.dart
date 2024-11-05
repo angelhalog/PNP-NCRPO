@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'info.dart'; 
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -22,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/bg.png'),
+                image: AssetImage('assets/images/blue.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -51,6 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 20),
                 _buildButton('POP',
                     'https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf/'),
+                const SizedBox(height: 20),
+                _buildButton('APP INFORMATION', ''), // No URL needed for navigation
               ],
             ),
           ),
@@ -69,13 +72,21 @@ class _MyHomePageState extends State<MyHomePage> {
           setState(() {
             _selectedButton = text;
           });
-          openUrl(urlString);
+          if (text == 'APP INFORMATION') {
+            // Navigate to info screen
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => InfoScreen()),
+            );
+          } else {
+            openUrl(urlString);
+          }
         },
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
           backgroundColor: isSelected
               ? const Color.fromARGB(255, 32, 78, 147)
-              : const Color.fromARGB(255, 100, 162, 240),
+              : const Color.fromARGB(255, 79, 125, 180),
           padding: const EdgeInsets.symmetric(vertical: 15),
         ),
         child: Text(text),

@@ -7,7 +7,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Navigate to the home screen after a delay
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => MyHomePage(title: 'PNP NCRPO'),
       ));
@@ -18,9 +18,9 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/splash.png'), // Your splash image
-            SizedBox(height: 20),
-            CircularProgressIndicator(),
+            Image.asset('assets/images/splash.png'),// Your splash image
+            CircularProgressIndicator(), 
+            SizedBox(height: 40),
           ],
         ),
       ),
