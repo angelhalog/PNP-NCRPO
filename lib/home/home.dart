@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 15),
+                  padding: const EdgeInsets.only(bottom: 30),
                   child: _buildLogosRow(),
                 ),
                 _buildButton('EDPPAS', 'https://app.edppas.com/'),
@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
       children: [
         Image.asset(
           'assets/images/header.png',
-          height: 150,
+          height: 170, // Increased height for larger header
           fit: BoxFit.contain,
         ),
       ],
