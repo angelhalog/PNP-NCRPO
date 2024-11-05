@@ -65,7 +65,7 @@ flutter:
      - assets/images/logoNCRPO.png
      - assets/images/logoBP.png
      - assets/images/header.png
-     - assets/images/blue.jpg
+     - assets/images/blue.png
      - assets/images/splash.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
