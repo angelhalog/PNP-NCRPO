@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 10),
                 _buildButton('PES', 'https://mail.pnp.gov.ph/mail/'),
                 const SizedBox(height: 10),
-                _buildButton('ONLINE PAY SLIP', 'https://payslip.pnppms.org/'),
+                _buildButton('ONLINE PAYSLIP', 'https://payslip.pnppms.org/'),
                 const SizedBox(height: 10),
                 _buildButton('POP',
                     'https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf/'),
