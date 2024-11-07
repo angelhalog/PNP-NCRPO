@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pnpmobilev2/splashscreen/splash.dart';
+import 'package:ncrpo_mobile_app_information/splashscreen/splash.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
 
   // This widget is the root of your application.
   @override
@@ -23,4 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
