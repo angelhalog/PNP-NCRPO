@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ncrpo_mobile_app_information/home/egov.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'edppas.dart';
 import 'info.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -12,14 +14,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String? _selectedButton;
+  String? _selectedButton; // Track which button is selected
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -39,21 +40,187 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.only(bottom: 30),
                   child: _buildLogosRow(),
                 ),
-                _buildButton('EDPPAS', 'https://app.edppas.com/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'EDPPAS'; 
+                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EdppasScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'EDPPAS'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'EDPPAS',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
-                _buildButton('EGOV PH',
-                    'https://play.google.com/store/apps/details?id=egov.app/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'EGOV PH';
+                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EgovScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'EGOV PH'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'EGOV PH',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
-                _buildButton('NCRPO WEBSITE', 'https://ncrpo.pnp.gov.ph/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'NCRPO WEBSITE';
+                      });
+                      launchUrl(
+                        Uri.parse('https://ncrpo.pnp.gov.ph/'),
+                        mode: LaunchMode.externalApplication,
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'NCRPO WEBSITE'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'NCRPO WEBSITE',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
-                _buildButton('PRMS', 'https://pais.pnp.gov.ph/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'PRMS';
+                      });
+                      launchUrl(
+                        Uri.parse('https://pais.pnp.gov.ph/'),
+                        mode: LaunchMode.externalApplication,
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'PRMS'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'PRMS',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
-                _buildButton('PES', 'https://mail.pnp.gov.ph/mail/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'PES';
+                      });
+                      launchUrl(
+                        Uri.parse('https://mail.pnp.gov.ph/mail/'),
+                        mode: LaunchMode.externalApplication,
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'PES'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'PES',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
-                _buildButton('ONLINE PAYSLIP', 'https://payslip.pnppms.org/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'ONLINE PAYSLIP'; 
+                      });
+                      launchUrl(
+                        Uri.parse('https://payslip.pnppms.org/'),
+                        mode: LaunchMode.externalApplication,
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'ONLINE PAYSLIP'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'ONLINE PAYSLIP',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
-                _buildButton('POP',
-                    'https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf/'),
+                SizedBox(
+                  width: 220,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _selectedButton = 'POP';
+                      });
+                      launchUrl(
+                        Uri.parse('https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf/'),
+                        mode: LaunchMode.externalApplication,
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: _selectedButton == 'POP'
+                          ? const Color.fromARGB(255, 32, 78, 147)
+                          : const Color.fromARGB(255, 79, 125, 180),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text(
+                      'POP',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -75,53 +242,16 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildButton(String text, String urlString) {
-    final isSelected = _selectedButton == text;
-
-    return SizedBox(
-      width: 220, // Increased width for larger buttons
-      child: ElevatedButton(
-        onPressed: () {
-          setState(() {
-            _selectedButton = text;
-          });
-          openUrl(urlString);
-        },
-        style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white,
-          backgroundColor: isSelected
-              ? const Color.fromARGB(255, 32, 78, 147)
-              : const Color.fromARGB(255, 79, 125, 180),
-          padding: const EdgeInsets.symmetric(vertical: 12), // Increased padding
-        ),
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 16), // Optional: adjust text size
-        ),
-      ),
-    );
-  }
-
   Widget _buildLogosRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
           'assets/images/header.png',
-          height: 170, // Increased height for larger header
+          height: 170,
           fit: BoxFit.contain,
         ),
       ],
     );
-  }
-}
-
-// Function to launch URL
-void openUrl(String url) async {
-  final Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
-  } else {
-    throw 'Could not launch $url';
   }
 }
