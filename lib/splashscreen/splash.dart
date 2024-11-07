@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:pnpmobilev2/home/home.dart';
+import 'package:ncrpo_mobile_app_information/home/home.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
