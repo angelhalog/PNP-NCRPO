@@ -7,7 +7,13 @@ class InfoScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('App Information'),
       ),
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/blue.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Text('This is the app information screen.'),
       ),
     );
