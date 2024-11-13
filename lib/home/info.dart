@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class InfoScreen extends StatelessWidget {
@@ -29,19 +28,19 @@ class InfoScreen extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 1),
-
                 Image.asset(
                   'assets/images/infoText.png',
                   width: 320,
                   height: 170,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 3),
+                const SizedBox(height: 10),
 
+                // Adding 92.png below infoText.png
                 Image.asset(
-                  'asset/images/92.png',
-                  width: 200,
-                  height: 200,
+                  'assets/images/92.png',
+                  width: 90,
+                  height: 90,
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 3),
