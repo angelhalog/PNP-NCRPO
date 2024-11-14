@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        _selectedButton = 'EDPPAS'; 
+                        _selectedButton = 'EDPPAS';
                       });
                       Navigator.push(
                         context,
@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        _selectedButton = 'ONLINE PAYSLIP'; 
+                        _selectedButton = 'ONLINE PAYSLIP';
                       });
                       launchUrl(
                         Uri.parse('https://payslip.pnppms.org/'),
@@ -204,7 +204,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         _selectedButton = 'POP';
                       });
                       launchUrl(
-                        Uri.parse('https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf'),
+                        Uri.parse(
+                            'https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf'),
                         mode: LaunchMode.externalApplication,
                       );
                     },
