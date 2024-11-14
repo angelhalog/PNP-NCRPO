@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         _selectedButton = 'POP';
                       });
                       launchUrl(
-                        Uri.parse('https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf/'),
+                        Uri.parse('https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf'),
                         mode: LaunchMode.externalApplication,
                       );
                     },
