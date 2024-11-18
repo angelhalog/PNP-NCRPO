@@ -205,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       });
                       launchUrl(
                         Uri.parse(
-                            'https://akg.pnp.gov.ph/wp-content/uploads/2024/01/POP-Manual-2021.pdf'),
+                            'https://lm.facebook.com/l.php?u=https%3A%2F%2Fakg.pnp.gov.ph%2Fwp-content%2Fuploads%2F2024%2F01%2FPOP-Manual-2021.pdf&h=AT34L74U8w7GiGucwCdV1d7zzeHlTOAoPwKRAvXRUqx1BRTNezt1oKWff9qnnhB8LeO92N_cxOP97qA66aXWbdBE2C58W9abKRUeaNNUMy-cDojQV1HGT5JcKclHC4uU'),
                         mode: LaunchMode.externalApplication,
                       );
                     },
